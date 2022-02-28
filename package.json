@@ -1,0 +1,53 @@
+{
+  "name": "sts_tracker",
+  "version": "1.0.0",
+  "description": "Tracking-Script für die Smarketer Tracking Suite",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:build": "webpack --mode development --watch",
+    "dev:server": "node staticServer.js",
+    "build": "webpack --mode production",
+    "lint": "prettier \"src/**/*.ts\" --write && eslint . --ext .ts --fix"
+  },
+  "author": "Bennett",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/register": "^7.15.3",
+    "gulp-concat": "^2.6.1",
+    "ngrok": "^4.2.2",
+    "promise-polyfill": "^8.2.0",
+    "regenerator-runtime": "^0.13.9",
+    "style-loader": "^1.3.0",
+    "webpack-stream": "^5.2.1"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@types/promise-polyfill": "^6.0.4",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^6.1.1",
+    "concurrently": "^6.3.0",
+    "copy-webpack-plugin": "^6.4.1",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "node-fetch": "^2.6.1",
+    "prettier": "^2.4.1",
+    "request": "^2.88.2",
+    "ts-loader": "^8.0.0",
+    "typescript": "^4.4.0",
+    "webpack": "^4.46.0",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.8.0"
+  },
+  "sideEffects": [
+    "./src/main.ts",
+    "core-js/features/promise",
+    "regenerator-runtime/runtime"
+  ]
+}
